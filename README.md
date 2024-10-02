@@ -1,4 +1,4 @@
-This is for the week 5 homeworks of CSOPESY. It contains:
+This is for the individual homeworks of CSOPESY. It contains:
 
 1. non-threaded marquee console
 2. threaded marquee console
