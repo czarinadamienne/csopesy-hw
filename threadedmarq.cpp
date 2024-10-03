@@ -38,7 +38,7 @@ void keyboardpolling(){
                 inp.push_back(key);
             }
         }
-        Sleep(20);
+        Sleep(5);
     }
 }
 
@@ -100,7 +100,7 @@ void marquee(){
         fcoord.X = strlen("Enter a command for MARQUEE_CONSOLE: ") + inp.length();
         fcoord.Y = sheight - 4;
         SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), fcoord);        
-        Sleep(10);
+        Sleep(6);
     }
 }
 

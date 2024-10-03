@@ -30,12 +30,10 @@ void keyboardpolling(){
         else if (key == 8){
             if(!inp.empty()){
                 inp.pop_back();
-                //cout << "\b \b";
             }
         }
         else{
             inp.push_back(key);
-            //cout << key;
         }
     }
 }
@@ -43,6 +41,7 @@ void keyboardpolling(){
 void marquee(){
     system("CLS"); 
 
+    //header coordinates
     COORD hcoord;
     hcoord.X = 0;
     hcoord.Y = 0;
@@ -58,7 +57,8 @@ void marquee(){
     
     xtext += xtextdir;
     ytext += ytextdir;
-
+    
+    //bounce off the screen
     if(xtext <= 0 || xtext >= swidth - text.length()){
         xtextdir *= -1;
     }
@@ -66,6 +66,7 @@ void marquee(){
         ytextdir *= -1;
     }
     
+    //text coordinates to move around the screen
     COORD tcoord;
     tcoord.X = xtext;
     tcoord.Y = ytext;
@@ -73,12 +74,14 @@ void marquee(){
 
     cout << text;
     
+    //input coordinates
     COORD inpcoord;
     inpcoord.X = 0;
     inpcoord.Y = sheight - 4;
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), inpcoord);
     std::cout << "Enter a command for MARQUEE_CONSOLE: " << inp;
     
+    //printing history coordinates
     for(int i = 0 ; i < inpcmds.size(); i++){    
         COORD cmdcoord;
         cmdcoord.X = 0;
@@ -87,6 +90,7 @@ void marquee(){
         std::cout << inpcmds[inpcmds.size() - 1 - i] << "\n";
     }
     
+    //final position of cursor
     COORD fcoord;
      fcoord.X = strlen("Enter a command for MARQUEE_CONSOLE: ") + inp.length();
      fcoord.Y = sheight - 4;
@@ -104,7 +108,7 @@ int main(){
     while (true) {
         keyboardpolling();
         marquee();
-        Sleep(10);
+        Sleep(6);
     }
 
     return 0;
