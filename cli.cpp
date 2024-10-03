@@ -115,7 +115,6 @@ void printprocess(){
 }
 
 int main(){
-    coord.Y = 7;
     procinfos.push_back({0, "N/A", "N/A", 4496, "C+G", "aaaaaaaaaaaaaaaaaaaaaaaaaaaa.exe", "N/A"});
     procinfos.push_back({0, "N/A", "N/A", 5020, "C+G", "bbbbbbbbbbbbbbbbbbbbbbbbbbbb.exe", "N/A"});
     procinfos.push_back({0, "N/A", "N/A", 5500, "C+G", "cccccccccccccccccccccccccccc.exe", "N/A"});
